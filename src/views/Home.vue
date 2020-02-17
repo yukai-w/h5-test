@@ -28,9 +28,7 @@ export default {
           imageData: canvas.toDataURL('image/png', 1).replace('data:image/png;base64,', ''),
           type: 2
         }
-        jsBridge.ShareEvent({
-          data: params,
-        })
+        jsBridge.ShareEvent(params)
       })
     }
   }
