@@ -22,11 +22,14 @@ export default {
     share() {
       html2canvas(document.getElementById('test')).then(function (canvas) {
         console.log(canvas.toDataURL('image/png', 1).replace('data:image/png;base64,', ''))
-        jsBridge.ShareEvent({
+        const params = {
           title: 'test',
           url: 'test',
           imageData: canvas.toDataURL('image/png', 1).replace('data:image/png;base64,', ''),
           type: 2
+        }
+        jsBridge.ShareEvent({
+          data: params,
         })
       })
     }
