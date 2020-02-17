@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div id="test" style="width: 200px; height: 20px;background:red">图片</div>
-    <button>分享测试</button>
+    <button @click="share">分享测试</button>
   </div>
 </template>
 
