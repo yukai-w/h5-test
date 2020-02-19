@@ -18,6 +18,16 @@ export default {
   components: {
     HelloWorld
   },
+  created () {
+    jsBridge.NativeNetworkRequest({
+      url: 'internal.validationTokens',
+      method: 'post',
+      params: {
+        token: 'c:app:67F1510767DC46CDB8DCAF6ABD99856A',
+        greenElectricCode: '11111111111'
+      }
+    })
+  },
   methods: {
     share() {
       html2canvas(document.getElementById('test')).then(function (canvas) {
