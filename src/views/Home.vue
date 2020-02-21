@@ -19,13 +19,25 @@ export default {
     HelloWorld
   },
   created () {
+    // jsBridge.NativeNetworkRequest({
+    //   url: 'internal.validationTokens',
+    //   method: 'post',
+    //   params: {
+    //     token: 'c:app:67F1510767DC46CDB8DCAF6ABD99856A',
+    //     greenElectricCode: '11111111111'
+    //   }
+    // })
+    jsBridge.SetTitleBar({
+      isShow: false
+    })
     jsBridge.NativeNetworkRequest({
+      ua: 'E卡',
       url: 'internal.validationTokens',
+      encryption: '1',
       method: 'post',
-      params: {
-        token: 'c:app:67F1510767DC46CDB8DCAF6ABD99856A',
-        greenElectricCode: '11111111111'
-      }
+      params: '{"token":"c:app:67F1510767DC46CDB8DCAF6ABD99856A","greenElectricCode":"11111111111"}'
+    }, function (res) {
+      console.log(res, 123123)
     })
   },
   methods: {
